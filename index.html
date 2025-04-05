@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Ti, Mi Vida</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a0a, #2c001e, #4d0019);
+      background-size: 600% 600%;
+      animation: fondo 20s ease infinite;
+      font-family: 'Quicksand', sans-serif;
+      color: #fff;
+      overflow: auto;  /* Agregar esta propiedad para permitir el desplazamiento */
+      height: 100vh;   /* Forzar que el body tenga el alto de la pantalla */
+    }
+
+    @keyframes fondo {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .contenedor {
+      max-width: 900px;
+      margin: 90px auto;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 50px;
+      border-radius: 30px;
+      box-shadow: 0 0 40px rgba(255, 0, 100, 0.6);
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 64px;
+      color: #ff4d88;
+      margin-bottom: 40px;
+      animation: aparecer 2s ease-out;
+    }
+
+    .mensaje {
+      font-size: 22px;
+      margin: 30px auto;
+      color: #ffd6e7;
+      border-right: 2px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: escribir 6s steps(50, end) forwards;
+    }
+
+    @keyframes escribir {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .corazones {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .corazones span {
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: url(2.jpeg) no-repeat center center;
+      background-size: cover;
+      animation: flotar 10s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(100vh) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+    }
+
+    .foto {
+      margin-top: 20px;
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      border-radius: 50%;
+      border: 10px solid #ff4d88;
+      overflow: hidden;
+      margin: 30px auto;
+      box-shadow: 0 0 20px rgba(255, 0, 100, 0.5);
+    }
+
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    button {
+      margin-top: 40px;
+      background-color: #ff4d88;
+      border: none;
+      padding: 15px 30px;
+      font-size: 20px;
+      color: white;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #e6005c;
+    }
+
+    .sorpresa {
+      display: none;
+      margin-top: 25px;
+      font-size: 20px;
+      color: #ffccdd;
+      animation: aparecer 2s ease-in;
+    }
+
+    .firma {
+      font-family: 'Great Vibes', cursive;
+      font-size: 30px;
+      margin-top: 60px;
+      color: #ff99cc;
+      text-shadow: 0 0 10px #ff4d88, 0 0 20px #ff4d88;
+      animation: aparecer 3s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música romántica -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Corazones flotantes -->
+  <div class="corazones">
+    <span style="left:10%; animation-delay:0s;"></span>
+    <span style="left:30%; animation-delay:2s;"></span>
+    <span style="left:50%; animation-delay:1s;"></span>
+    <span style="left:70%; animation-delay:3s;"></span>
+    <span style="left:90%; animation-delay:0.5s;"></span>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="contenedor">
+    <h1>Para Ti, Mi Vida 💞</h1>
+
+    <div class="mensaje">Eres el sueño más bonito que la vida me regaló 💫</div>
+    <div class="mensaje" style="animation-delay: 6s;">Contigo aprendí que el amor se siente, se cuida, se vive 🌹</div>
+    <div class="mensaje" style="animation-delay: 12s;">Nunca dudes de ti, yo siempre estaré a tu lado 💪</div>
+    <div class="mensaje" style="animation-delay: 18s;">Te quiero con el alma, sin límites, sin pausas ❤️</div>
+
+    <!-- Imagen de la pareja -->
+    <div class="foto">
+      <img src="1.jpeg" alt="Foto de mi vida">
+    </div>
+
+    <button onclick="document.getElementById('sorpresa').style.display='block'">Haz clic para una sorpresa 💌</button>
+
+    <div class="sorpresa" id="sorpresa">
+      No importa qué pase, siempre serás mi elección.  
+      Te cuidaré, te apoyaré, te querré… siempre. 💖
+    </div>
+
+    <div class="firma">
+      ATT: Tu lobita 🐺✨
+    </div>
+  </div>
+
+</body>
+</html>
